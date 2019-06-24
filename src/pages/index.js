@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 const Main = styled.div`
   /* align-content: center; */
@@ -13,9 +14,7 @@ const Main = styled.div`
   height: 100vh;
 `;
 
-const Headshot = styled.img.attrs({
-  src: 'https://jpcastberg-portfolio.s3-us-west-1.amazonaws.com/HEADSHOT(square).png'
-})`
+const Headshot = styled(Img)`
   border: 2px solid rgb(200, 200, 200);
   max-width: 220px;
   border-radius: 100%;
@@ -35,9 +34,9 @@ const Text = styled.p`
 `;
 
 
-export default () => (
+export default ({ data }) => (
   <Main>
-    <Headshot />
+    <Headshot fixed={data.file.childImageSharp.fixed} />
     <div>
       <Text>
         I'm John, a full stack developer from San Francisco, CA.
@@ -52,3 +51,15 @@ export default () => (
     </Nav>
   </Main>
 );
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "images/headshot_square.png" }) {
+      childImageSharp {
+        fixed(width: 220, height: 220) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
