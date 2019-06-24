@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Main = styled.div`
   /* align-content: center; */
@@ -20,6 +21,15 @@ const Headshot = styled.img.attrs({
   border-radius: 100%;
 `;
 
+const Nav = styled.nav`
+  display: flex;
+  flex-direction: row;
+`
+
+const NavLink = styled(Link)`
+ width: 100%;
+`
+
 const Text = styled.p`
   color: white;
 `;
@@ -36,5 +46,9 @@ export default () => (
         I build websites using React and Node.
       </Text>
     </div>
+    <Nav>
+      <NavLink to='someotherpage'>Some Other page</NavLink>
+      <NavLink to='someotherpage'>Some Other other page</NavLink>
+    </Nav>
   </Main>
 );
