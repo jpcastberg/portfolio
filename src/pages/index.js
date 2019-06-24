@@ -1,8 +1,22 @@
 import React from 'react';
-import Layout from '../components/layout';
+import styled from 'styled-components';
+
+const Main = styled.div`
+  /* align-content: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+`;
+
+const Text = styled.p`
+  color: white;
+`;
 
 export default () => (
-  <Layout>
-    <div>Hello world!</div>
-  </Layout>
+  <Main>
+    <Text>Hello World!</Text>
+  </Main>
 );
