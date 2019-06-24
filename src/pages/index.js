@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 const Main = styled.div`
-  /* align-content: center; */
   display: flex;
   flex-direction: column;
   justify-content: center;
