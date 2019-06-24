@@ -35,7 +35,7 @@ const Text = styled.p`
 
 export default ({ data }) => (
   <Main>
-    <Headshot fixed={data.file.childImageSharp.fixed} />
+    <Headshot fixed={data.headshot.childImageSharp.fixed} />
     <div>
       <Text>
         I'm John, a full stack developer from San Francisco, CA.
@@ -44,6 +44,7 @@ export default ({ data }) => (
         I build websites using React and Node.
       </Text>
     </div>
+    <Img fixed={data.github.childImageSharp.fixed}></Img>
     <Nav>
       <NavLink to='someotherpage'>Some Other page</NavLink>
       <NavLink to='someotherpage'>Some Other other page</NavLink>
@@ -53,7 +54,14 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "images/headshot_square.png" }) {
+    headshot: file(relativePath: { eq: "images/headshot_square.png" }) {
+      childImageSharp {
+        fixed(width: 220, height: 220) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    github: file(relativePath: { eq: "images/github.png" }) {
       childImageSharp {
         fixed(width: 220, height: 220) {
           ...GatsbyImageSharpFixed
