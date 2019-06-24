@@ -1,3 +1,4 @@
+const path = require('path');
 /**
  * Configure your Gatsby site with this file.
  *
@@ -5,5 +6,15 @@
  */
 
 module.exports = {
-  plugins: [`gatsby-plugin-styled-components`],
+  plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.join(__dirname, 'src', 'data'),
+      },
+    },
+  ],
 }
