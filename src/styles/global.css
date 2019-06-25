@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
@@ -7,4 +9,5 @@ html {
   width: 100vw;
   height: 100vh;
   background: radial-gradient(closest-side, rgba(40,40,40,1) 0%, rgba(0,0,0,1) 90%);
+  font-family: 'Open Sans', sans-serif;
 }
