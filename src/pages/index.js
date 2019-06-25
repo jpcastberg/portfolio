@@ -17,7 +17,6 @@ const Main = styled.div`
 
 const Headshot = styled(Img)`
   border: 2px solid rgb(200, 200, 200);
-  max-width: 220px;
   border-radius: 100%;
 `;
 
