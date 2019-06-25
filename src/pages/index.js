@@ -46,7 +46,7 @@ const ExternalLinks = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 50px;
+  height: 40px;
   margin: 5px 0px;
   width: 150px;
 `;
@@ -95,14 +95,14 @@ export const query = graphql`
     }
     github: file(relativePath: { eq: "images/github.png" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 40, height: 40) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     linkedin: file(relativePath: { eq: "images/linkedin.png" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 40, height: 40) {
           ...GatsbyImageSharpFixed
         }
       }
