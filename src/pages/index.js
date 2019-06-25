@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+import ExternalLink from '../components/externalLink';
+
 const Main = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,20 +24,31 @@ const Headshot = styled(Img)`
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
-`
+`;
 
 const NavLink = styled(Link)`
  width: 100%;
-`
+ `;
+
+ const ExternalLinks = styled.ul`
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+ `;
 
 const Text = styled.p`
   color: white;
 `;
 
-
 export default ({ data }) => (
   <Main>
     <Headshot fixed={data.headshot.childImageSharp.fixed} />
+    <ExternalLinks>
+      <ExternalLink
+        fixed={data.github.childImageSharp.fixed}
+        href="https://github.com/jpcastberg"
+      />
+    </ExternalLinks>
     <div>
       <Text>
         I'm John, a full stack developer from San Francisco, CA.
@@ -44,7 +57,6 @@ export default ({ data }) => (
         I build websites using React and Node.
       </Text>
     </div>
-    <Img fixed={data.github.childImageSharp.fixed}></Img>
     <Nav>
       <NavLink to='someotherpage'>Some Other page</NavLink>
       <NavLink to='someotherpage'>Some Other other page</NavLink>
@@ -63,7 +75,7 @@ export const query = graphql`
     }
     github: file(relativePath: { eq: "images/github.png" }) {
       childImageSharp {
-        fixed(width: 220, height: 220) {
+        fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
         }
       }
