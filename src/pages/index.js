@@ -45,8 +45,10 @@ const ExternalLinks = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   height: 50px;
   margin: 5px 0px;
+  width: 150px;
 `;
 
 const Text = styled.p`
@@ -61,6 +63,10 @@ export default ({ data }) => (
       <ExternalLink
         fixed={data.github.childImageSharp.fixed}
         href="https://github.com/jpcastberg"
+      />
+      <ExternalLink
+        fixed={data.linkedin.childImageSharp.fixed}
+        href="https://linkedin.com/in/jpcastberg"
       />
     </ExternalLinks>
     <div>
@@ -88,6 +94,13 @@ export const query = graphql`
       }
     }
     github: file(relativePath: { eq: "images/github.png" }) {
+      childImageSharp {
+        fixed(width: 50, height: 50) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    linkedin: file(relativePath: { eq: "images/linkedin.png" }) {
       childImageSharp {
         fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
