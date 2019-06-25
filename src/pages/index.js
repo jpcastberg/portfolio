@@ -33,6 +33,7 @@ const NavLink = styled(Link)`
     list-style: none;
     display: flex;
     flex-direction: row;
+    height: 50px;
  `;
 
 const Text = styled.p`
