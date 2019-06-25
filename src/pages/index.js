@@ -18,26 +18,30 @@ const Main = styled.div`
 const Headshot = styled(Img)`
   border: 2px solid rgb(200, 200, 200);
   border-radius: 100%;
+  margin-bottom: 5px;
 `;
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
+  margin-top: 5px;
 `;
 
 const NavLink = styled(Link)`
  width: 100%;
  `;
 
- const ExternalLinks = styled.ul`
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    height: 50px;
- `;
+const ExternalLinks = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  margin: 5px 0px;
+`;
 
 const Text = styled.p`
   color: white;
+  margin: 5px 0px;
 `;
 
 export default ({ data }) => (
