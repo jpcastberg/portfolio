@@ -24,12 +24,22 @@ const Headshot = styled(Img)`
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   margin-top: 5px;
+  width: 300px;
 `;
 
 const NavLink = styled(Link)`
- width: 100%;
- `;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0px 5px;
+  width: 100px;
+`;
 
 const ExternalLinks = styled.ul`
   list-style: none;
@@ -62,8 +72,8 @@ export default ({ data }) => (
       </Text>
     </div>
     <Nav>
-      <NavLink to='someotherpage'>Some Other page</NavLink>
-      <NavLink to='someotherpage'>Some Other other page</NavLink>
+      <NavLink to='someotherpage'>About</NavLink>
+      <NavLink to='someotherpage'>Projects</NavLink>
     </Nav>
   </Main>
 );
