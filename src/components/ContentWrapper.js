@@ -8,7 +8,7 @@ const MainLayout = styled.div`
   justify-content: center;
   text-align: center;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 50px); /* Adjustment for height of Nav bar */
 `;
 
 export default ({ children }) => (
