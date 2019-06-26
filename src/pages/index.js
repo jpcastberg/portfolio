@@ -18,6 +18,7 @@ const MainContent = styled.div`
 const Headshot = styled(Img)`
   border: 2px solid rgb(200, 200, 200);
   border-radius: 100%;
+  min-height:220px;
 `;
 
 const Nav = styled.nav`
