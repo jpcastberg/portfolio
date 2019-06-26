@@ -48,6 +48,15 @@ const ExternalLinks = styled.ul`
   width: 110px;
 `;
 
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+`;
+
 const Text = styled.p`
   color: white;
 `;
@@ -66,12 +75,14 @@ export default ({ data }) => (
           href="https://linkedin.com/in/jpcastberg"
         />
       </ExternalLinks>
-      <Text>
-        I'm John, a full stack developer from San Francisco, CA.
-      </Text>
-      <Text>
-        I build websites using React and Node.
-      </Text>
+      <TextContainer>
+        <Text>
+          I'm John, a full stack developer from San Francisco, CA.
+        </Text>
+        <Text>
+          I build websites using React and Node.
+        </Text>
+      </TextContainer>
       <Nav>
         <NavLink to='someotherpage'>About</NavLink>
         <NavLink to='someotherpage'>Projects</NavLink>
