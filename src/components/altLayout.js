@@ -60,7 +60,7 @@ export default ({ children, currentPage }) => (
       <div>
         Hello From Layout
         {children}
-        <Link>Main</Link>
+        <Link to="index">Main</Link>
       </div>
     </MainLayout>
   </div>
