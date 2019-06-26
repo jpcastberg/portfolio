@@ -3,29 +3,27 @@ import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+import MainLayout from '../components/mainLayout';
 import ExternalLink from '../components/externalLink';
 
-const Main = styled.div`
+const MainContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: 100vw;
-  height: 100vh;
+  height: 390px;
 `;
 
 const Headshot = styled(Img)`
   border: 2px solid rgb(200, 200, 200);
   border-radius: 100%;
-  margin-bottom: 5px;
 `;
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 5px;
   width: 300px;
 `;
 
@@ -37,7 +35,6 @@ const NavLink = styled(Link)`
   border: 2px solid white;
   border-radius: 10px;
   padding: 8px;
-  margin: 0px 5px;
   width: 100px;
 `;
 
@@ -47,7 +44,6 @@ const ExternalLinks = styled.ul`
   flex-direction: row;
   justify-content: space-around;
   height: 40px;
-  margin: 5px 0px;
   width: 150px;
 `;
 
@@ -57,31 +53,33 @@ const Text = styled.p`
 `;
 
 export default ({ data }) => (
-  <Main>
-    <Headshot fixed={data.headshot.childImageSharp.fixed} />
-    <ExternalLinks>
-      <ExternalLink
-        fixed={data.github.childImageSharp.fixed}
-        href="https://github.com/jpcastberg"
-      />
-      <ExternalLink
-        fixed={data.linkedin.childImageSharp.fixed}
-        href="https://linkedin.com/in/jpcastberg"
-      />
-    </ExternalLinks>
-    <div>
-      <Text>
-        I'm John, a full stack developer from San Francisco, CA.
-      </Text>
-      <Text>
-        I build websites using React and Node.
-      </Text>
-    </div>
-    <Nav>
-      <NavLink to='someotherpage'>About</NavLink>
-      <NavLink to='someotherpage'>Projects</NavLink>
-    </Nav>
-  </Main>
+  <MainLayout>
+    <MainContent>
+      <Headshot fixed={data.headshot.childImageSharp.fixed} />
+      <ExternalLinks>
+        <ExternalLink
+          fixed={data.github.childImageSharp.fixed}
+          href="https://github.com/jpcastberg"
+        />
+        <ExternalLink
+          fixed={data.linkedin.childImageSharp.fixed}
+          href="https://linkedin.com/in/jpcastberg"
+        />
+      </ExternalLinks>
+      <div>
+        <Text>
+          I'm John, a full stack developer from San Francisco, CA.
+        </Text>
+        <Text>
+          I build websites using React and Node.
+        </Text>
+      </div>
+      <Nav>
+        <NavLink to='someotherpage'>About</NavLink>
+        <NavLink to='someotherpage'>Projects</NavLink>
+      </Nav>
+    </MainContent>
+  </MainLayout>
 );
 
 export const query = graphql`
