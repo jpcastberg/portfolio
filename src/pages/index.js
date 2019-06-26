@@ -12,7 +12,7 @@ const MainContent = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 390px;
+  height: 400px;
 `;
 
 const Headshot = styled(Img)`
@@ -23,8 +23,9 @@ const Headshot = styled(Img)`
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 300px;
+  justify-content: space-between;
+  width: 280px;
+  margin-top: 5px;
 `;
 
 const NavLink = styled(Link)`
@@ -42,14 +43,13 @@ const ExternalLinks = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 40px;
-  width: 150px;
+  width: 110px;
 `;
 
 const Text = styled.p`
   color: white;
-  margin: 5px 0px;
 `;
 
 export default ({ data }) => (
@@ -66,14 +66,12 @@ export default ({ data }) => (
           href="https://linkedin.com/in/jpcastberg"
         />
       </ExternalLinks>
-      <div>
-        <Text>
-          I'm John, a full stack developer from San Francisco, CA.
-        </Text>
-        <Text>
-          I build websites using React and Node.
-        </Text>
-      </div>
+      <Text>
+        I'm John, a full stack developer from San Francisco, CA.
+      </Text>
+      <Text>
+        I build websites using React and Node.
+      </Text>
       <Nav>
         <NavLink to='someotherpage'>About</NavLink>
         <NavLink to='someotherpage'>Projects</NavLink>
