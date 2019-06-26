@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 import ContentWrapper from '../components/ContentWrapper';
 import Transition from '../components/Transition';
@@ -52,6 +53,13 @@ const createNavItem = (navDestination, location) => {
 
 export default ({ children, location }) => (
   <div>
+    <Helmet
+      title="John Castberg"
+      meta={[
+        { name: `description`, content: `A page to showcase John Castberg and his wondrous talents in software engineering` },
+        { name: `keywords`, content: `web, software, development, portfolio, San Francisco` },
+      ]}
+    />
     <NavArea>
       <NavContainer>
           <li>
