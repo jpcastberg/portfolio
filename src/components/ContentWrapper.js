@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MainLayout = styled.div`
+const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@ const MainLayout = styled.div`
 `;
 
 export default ({ children }) => (
-  <MainLayout>
+  <ContentWrapper>
     {children}
-  </MainLayout>
+  </ContentWrapper>
 );
