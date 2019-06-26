@@ -12,7 +12,7 @@ const MainContent = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 400px;
+  min-height: 400px;
 `;
 
 const Headshot = styled(Img)`
