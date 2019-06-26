@@ -19,9 +19,11 @@ const NavContainer = styled.ul`
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  float: right;
-  width: 100%;
+  width: 50%;
+  max-width: 500px;
+  min-width: 300px;
   height: 100%;
+  margin: 0px auto;
 `;
 
 const NavLink = styled(Link)`
