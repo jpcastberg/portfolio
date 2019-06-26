@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import MainLayout from './mainLayout';
+import ContentWrapper from '../components/ContentWrapper';
 
 const NavArea = styled.div`
   position: sticky;
@@ -27,41 +27,43 @@ const NavLink = styled(Link)`
   color: white;
 `;
 
-const createNavItem = (navItemName, currentPage) => {
-  if (navItemName === currentPage) {
+const createNavItem = (navDestination, location) => {
+  let userFacingNavText;
+  if (navDestination === '/') {
+    userFacingNavText = 'Main';
+  } else {
+    userFacingNavText = `${navDestination[1].toUpperCase()}${navDestination.slice(2)}`
+  }
+  if (navDestination === location.pathname) {
     return (
-      <span>{navItemName}</span>
+      <span style={{ cursor: 'default' }} >{userFacingNavText}</span>
     );
   } else {
     return (
-      <NavLink to={`/${navItemName.toLowerCase()}`}>
-        {navItemName}
+      <NavLink to={navDestination}>
+        {userFacingNavText}
       </NavLink>
     )
   }
 }
 
-export default ({ children, currentPage }) => (
+export default ({ children, location }) => (
   <div>
     <NavArea>
       <NavContainer>
           <li>
-            <NavLink to='/index'>Main</NavLink>
+            {createNavItem('/', location)}
           </li>
           <li>
-            {createNavItem('About', currentPage)}
+            {createNavItem('/about', location)}
           </li>
           <li>
-            {createNavItem('Projects', currentPage)}
+            {createNavItem('/projects', location)}
           </li>
       </NavContainer>
     </NavArea>
-    <MainLayout>
-      <div>
-        Hello From Layout
-        {children}
-        <Link to="/index">Main</Link>
-      </div>
-    </MainLayout>
+    <ContentWrapper>
+      {children}
+    </ContentWrapper>
   </div>
 );
