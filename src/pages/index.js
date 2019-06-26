@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import MainLayout from '../components/mainLayout';
-import ExternalLink from '../components/externalLink';
+import ExternalLink from '../components/ExternalLink';
 
 const MainContent = styled.div`
   display: flex;
@@ -50,32 +49,30 @@ const ExternalLinks = styled.ul`
 `;
 
 export default ({ data }) => (
-  <MainLayout>
-    <MainContent>
-      <Headshot fixed={data.headshot.childImageSharp.fixed} />
-      <ExternalLinks>
-        <ExternalLink
-          fixed={data.github.childImageSharp.fixed}
-          href="https://github.com/jpcastberg"
-        />
-        <ExternalLink
-          fixed={data.linkedin.childImageSharp.fixed}
-          href="https://linkedin.com/in/jpcastberg"
-        />
-      </ExternalLinks>
-      <div>
-        <p>
-          I'm John, a full stack developer from San Francisco, CA.
-          <br/>
-          I build websites using React and Node.
-        </p>
-      </div>
-      <Nav>
-        <NavLink to='/about'>About</NavLink>
-        <NavLink to='/projects'>Projects</NavLink>
-      </Nav>
-    </MainContent>
-  </MainLayout>
+  <MainContent>
+    <Headshot fixed={data.headshot.childImageSharp.fixed} />
+    <ExternalLinks>
+      <ExternalLink
+        fixed={data.github.childImageSharp.fixed}
+        href="https://github.com/jpcastberg"
+      />
+      <ExternalLink
+        fixed={data.linkedin.childImageSharp.fixed}
+        href="https://linkedin.com/in/jpcastberg"
+      />
+    </ExternalLinks>
+    <div>
+      <p>
+        I'm John, a full stack developer from San Francisco, CA.
+        <br/>
+        I build websites using React and Node.
+      </p>
+    </div>
+    <Nav>
+      <NavLink to='/about'>About</NavLink>
+      <NavLink to='/projects'>Projects</NavLink>
+    </Nav>
+  </MainContent>
 );
 
 export const query = graphql`
