@@ -10,5 +10,6 @@ html {
   height: 100vh;
   background: radial-gradient(closest-side, rgba(40,40,40,1) 0%, rgba(0,0,0,1) 90%);
   font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
   color: white;
 }

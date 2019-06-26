@@ -58,10 +58,6 @@ const TextContainer = styled.div`
   height: 50px;
 `;
 
-const Text = styled.p`
-  color: white;
-`;
-
 export default ({ data }) => (
   <MainLayout>
     <MainContent>
@@ -76,14 +72,11 @@ export default ({ data }) => (
           href="https://linkedin.com/in/jpcastberg"
         />
       </ExternalLinks>
-      <TextContainer>
-        <Text>
-          I'm John, a full stack developer from San Francisco, CA.
-        </Text>
-        <Text>
-          I build websites using React and Node.
-        </Text>
-      </TextContainer>
+      <p>
+        I'm John, a full stack developer from San Francisco, CA.
+        <br/>
+        I build websites using React and Node.
+      </p>
       <Nav>
         <NavLink to='someotherpage'>About</NavLink>
         <NavLink to='someotherpage'>Projects</NavLink>
