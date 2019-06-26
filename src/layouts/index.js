@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import ContentWrapper from '../components/ContentWrapper';
+import Transition from '../components/Transition';
 
 const NavArea = styled.div`
   position: sticky;
@@ -62,8 +63,10 @@ export default ({ children, location }) => (
           </li>
       </NavContainer>
     </NavArea>
-    <ContentWrapper>
-      {children}
-    </ContentWrapper>
+    <Transition location={location}>
+      <ContentWrapper>
+        {children}
+      </ContentWrapper>
+    </Transition>
   </div>
 );
