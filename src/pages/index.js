@@ -78,8 +78,8 @@ export default ({ data }) => (
         I build websites using React and Node.
       </p>
       <Nav>
-        <NavLink to='someotherpage'>About</NavLink>
-        <NavLink to='someotherpage'>Projects</NavLink>
+        <NavLink to='about'>About</NavLink>
+        <NavLink to='projects'>Projects</NavLink>
       </Nav>
     </MainContent>
   </MainLayout>
