@@ -31,6 +31,22 @@ const NavLink = styled(Link)`
   color: white;
 `;
 
+const Nav = ({ location }) => (
+  <NavArea>
+    <NavContainer>
+        <li>
+          {createNavItem('/', location)}
+        </li>
+        <li>
+          {createNavItem('/about', location)}
+        </li>
+        <li>
+          {createNavItem('/projects', location)}
+        </li>
+    </NavContainer>
+  </NavArea>
+);
+
 const createNavItem = (navDestination, location) => {
   let userFacingNavText;
   if (navDestination === '/') {
@@ -60,21 +76,9 @@ export default ({ children, location }) => (
         { name: `keywords`, content: `web, software, development, portfolio, San Francisco` },
       ]}
     />
-    <NavArea>
-      <NavContainer>
-          <li>
-            {createNavItem('/', location)}
-          </li>
-          <li>
-            {createNavItem('/about', location)}
-          </li>
-          <li>
-            {createNavItem('/projects', location)}
-          </li>
-      </NavContainer>
-    </NavArea>
     <Transition location={location}>
-      <ContentWrapper>
+      {location.pathname === '/' ? null : <Nav location={location} />}
+      <ContentWrapper main={location.pathname === '/'} >
         {children}
       </ContentWrapper>
     </Transition>
