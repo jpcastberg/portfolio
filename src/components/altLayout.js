@@ -34,7 +34,7 @@ const createNavItem = (navItemName, currentPage) => {
     );
   } else {
     return (
-      <NavLink to={navItemName.toLowerCase()}>
+      <NavLink to={`/${navItemName.toLowerCase()}`}>
         {navItemName}
       </NavLink>
     )
@@ -46,7 +46,7 @@ export default ({ children, currentPage }) => (
     <NavArea>
       <NavContainer>
           <li>
-            <NavLink to='index'>Main</NavLink>
+            <NavLink to='/index'>Main</NavLink>
           </li>
           <li>
             {createNavItem('About', currentPage)}
@@ -60,7 +60,7 @@ export default ({ children, currentPage }) => (
       <div>
         Hello From Layout
         {children}
-        <Link to="index">Main</Link>
+        <Link to="/index">Main</Link>
       </div>
     </MainLayout>
   </div>
