@@ -48,13 +48,14 @@ const Nav = ({ location }) => (
 );
 
 const createNavItem = (navDestination, location) => {
+  const { pathname } = location;
   let userFacingNavText;
   if (navDestination === '/') {
     userFacingNavText = 'Main';
   } else {
     userFacingNavText = `${navDestination[1].toUpperCase()}${navDestination.slice(2)}`
   }
-  if (navDestination === location.pathname) {
+  if (navDestination === pathname) {
     return (
       <span style={{ cursor: 'default' }} >{userFacingNavText}</span>
     );
@@ -67,7 +68,7 @@ const createNavItem = (navDestination, location) => {
   }
 }
 
-export default ({ children, location }) => (
+export default ({ children, location, location: { pathname } }) => (
   <div>
     <Helmet
       title="John Castberg"
@@ -77,8 +78,8 @@ export default ({ children, location }) => (
       ]}
     />
     <Transition location={location}>
-      {location.pathname === '/' ? null : <Nav location={location} />}
-      <ContentWrapper main={location.pathname === '/'} >
+      {pathname === '/' ? null : <Nav location={location} />}
+      <ContentWrapper main={pathname === '/'} >
         {children}
       </ContentWrapper>
     </Transition>
