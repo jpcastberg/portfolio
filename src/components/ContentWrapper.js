@@ -7,5 +7,5 @@ export default styled.div`
   justify-content: center;
   text-align: center;
   width: 100vw;
-  ${({main}) => `height: ${main ? `100vh` : `calc(100vh - 50px);`}`}
+  height: calc(100vh - 50px)
 `;
