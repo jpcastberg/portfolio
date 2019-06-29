@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import ContentWrapper from '../components/ContentWrapper';
 import Transition from '../components/Transition';
 import Nav from '../components/Nav';
 
@@ -16,9 +15,7 @@ export default ({ children, location, location: { pathname } }) => (
     />
     <Nav location={location} />
     <Transition location={location}>
-      <ContentWrapper main={pathname === '/'} >
-        {children}
-      </ContentWrapper>
+      {children}
     </Transition>
   </div>
 );
