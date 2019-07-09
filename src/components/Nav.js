@@ -21,8 +21,7 @@ const fadeOut = keyframes`
 `;
 
 const NavArea = styled.div`
-  position: sticky;
-  top: 0px;
+  position: fixed;
   width: 100%;
   height: 50px;
   border-bottom: thin solid white;
