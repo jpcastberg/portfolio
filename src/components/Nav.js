@@ -24,10 +24,12 @@ const NavArea = styled.div`
   position: fixed;
   width: 100%;
   height: 50px;
+  background-color: black;
   border-bottom: thin solid white;
   visibility: ${props => props.out ? 'hidden' : 'visible'};
   animation: ${props => props.out ? fadeOut : fadeIn} .3s linear;
   transition: visibility .3s linear;
+  z-index: 1;
 `;
 
 const NavContainer = styled.ul`
