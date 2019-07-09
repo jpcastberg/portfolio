@@ -65,7 +65,7 @@ export default ({ data }) => (
       </ExternalLinks>
       <div>
         <p>
-          I'm John, a full stack developer from San Francisco, CA.
+          I'm John, a full stack web developer from San Francisco, CA.
           <br/>
           I build websites using React and Node.
         </p>
