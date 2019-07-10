@@ -4,21 +4,13 @@ import styled, { keyframes } from 'styled-components';
 import { Link } from 'gatsby';
 
 const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 `;
 
 const fadeOut = keyframes`
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 `;
 
 const NavArea = styled.div`
@@ -52,17 +44,11 @@ const NavLink = styled(Link)`
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      out: null,
-    };
+    this.state = { out: null };
   }
 
   componentDidMount() {
-    const {
-      props: {
-        pathname,
-      },
-    } = this;
+    const { props: { pathname } } = this;
     if (pathname === '/') {
       this.setState({ out: true });
     } else if (pathname !== '/') {
@@ -83,11 +69,7 @@ export default class Nav extends React.Component {
   }
 
   createNavItem(navDestination) {
-    const {
-      props: {
-        pathname,
-      },
-    } = this;
+    const { props: { pathname } } = this;
     let userFacingNavText;
     if (navDestination === '/') {
       userFacingNavText = 'Main';
@@ -103,9 +85,7 @@ export default class Nav extends React.Component {
   }
 
   render() {
-    const {
-      state: { out },
-    } = this;
+    const { state: { out } } = this;
     return (
       <NavArea out={out}>
         <NavContainer>
