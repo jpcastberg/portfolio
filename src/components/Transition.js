@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import {
   TransitionGroup,
   Transition as ReactTransition,
@@ -7,7 +8,7 @@ import {
 const timeout = 250;
 const getTransitionStyles = {
   entering: {
-    position: `absolute`,
+    position: 'absolute',
     opacity: 0,
   },
   entered: {
@@ -20,14 +21,14 @@ const getTransitionStyles = {
   },
 };
 
-export default class extends React.PureComponent {
+export default class Transition extends React.PureComponent {
   render() {
-    const { children, location } = this.props;
+    const { children, pathname } = this.props;
 
     return (
       <TransitionGroup>
         <ReactTransition
-          key={location.pathname}
+          key={pathname}
           timeout={{
             enter: timeout,
             exit: timeout,
@@ -47,3 +48,17 @@ export default class extends React.PureComponent {
     );
   }
 }
+
+Transition.propTypes = {
+  children: propTypes.oneOfType([
+    propTypes.arrayOf(propTypes.node),
+    propTypes.node,
+    propTypes.object,
+  ]),
+  pathname: propTypes.string,
+};
+
+Transition.defaultProps = {
+  children: null,
+  pathname: '/',
+};
