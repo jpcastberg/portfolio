@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -48,7 +49,7 @@ const NavContainer = styled.ul`
 const NavLink = styled(Link)`
   color: white;
 `;
-export default class extends React.Component {
+export default class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +60,7 @@ export default class extends React.Component {
   componentDidMount() {
     const {
       props: {
-        location: { pathname },
+        pathname,
       },
     } = this;
     if (pathname === '/') {
@@ -69,27 +70,22 @@ export default class extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    const {
-      state: { out },
-      props: {
-        location: { pathname: currentPage },
-      },
-    } = this;
-    const {
-      location: { pathname: prevPage },
-    } = prevProps;
-    if (prevPage === '/' && currentPage !== '/' && out === true) {
-      this.setState({ out: false });
-    } else if (prevPage !== '/' && currentPage === '/' && out === false) {
-      this.setState({ out: true });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { pathname: nextPage } = nextProps;
+    const { out } = prevState;
+    if (nextPage !== '/' && out) {
+      return { out: false };
     }
+    if (nextPage === '/' && !out) {
+      return { out: true };
+    }
+    return prevState;
   }
 
   createNavItem(navDestination) {
     const {
       props: {
-        location: { pathname },
+        pathname,
       },
     } = this;
     let userFacingNavText;
@@ -97,14 +93,13 @@ export default class extends React.Component {
       userFacingNavText = 'Main';
     } else {
       userFacingNavText = `${navDestination[1].toUpperCase()}${navDestination.slice(
-        2
+        2,
       )}`;
     }
     if (navDestination === pathname) {
       return <span style={{ cursor: 'default' }}>{userFacingNavText}</span>;
-    } else {
-      return <NavLink to={navDestination}>{userFacingNavText}</NavLink>;
     }
+    return <NavLink to={navDestination}>{userFacingNavText}</NavLink>;
   }
 
   render() {
@@ -122,3 +117,11 @@ export default class extends React.Component {
     );
   }
 }
+
+Nav.propTypes = {
+  pathname: propTypes.string,
+};
+
+Nav.defaultProps = {
+  pathname: '/',
+};
