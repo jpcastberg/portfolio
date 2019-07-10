@@ -48,7 +48,6 @@ const NavContainer = styled.ul`
 const NavLink = styled(Link)`
   color: white;
 `;
-
 export default class extends React.Component {
   constructor(props) {
     super(props);
