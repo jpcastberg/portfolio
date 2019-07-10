@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { Heading, SubHeading } from '../components/Heading';
@@ -28,6 +29,20 @@ const LinkedLI = ({ children, href }) => (
   </li>
 );
 
+LinkedLI.propTypes = {
+  children: propTypes.oneOfType([
+    propTypes.arrayOf(propTypes.node),
+    propTypes.node,
+    propTypes.object,
+  ]),
+  href: propTypes.string,
+};
+
+LinkedLI.defaultProps = {
+  children: null,
+  href: '',
+};
+
 export default () => (
   <Content>
     <Heading>About</Heading>
@@ -39,15 +54,15 @@ export default () => (
       </p>
       <br />
       <p>
-        When I'm not writing code, I enjoy bicycling around San Francisco,
+        When I&aposm not writing code, I enjoy bicycling around San Francisco,
         meeting new people to share ideas with, and playing bass guitar in my
-        band, "You".
+        band, &quotYou&quot.
       </p>
     </div>
     <br />
     <SubHeading>Technologies Used</SubHeading>
     <div>
-      <h4 style={{ display: 'inline' }}>{'Front End: '}</h4>
+      <h4 style={{ display: 'inline' }}>Front End:&nbsp;</h4>
       <TechList>
         <LinkedLI href="https://reactjs.org">React.js</LinkedLI>
         {', '}
@@ -67,7 +82,7 @@ export default () => (
       </TechList>
       <br />
       <br />
-      <h4 style={{ display: 'inline' }}>{'Server Side: '}</h4>
+      <h4 style={{ display: 'inline' }}>Server Side:&nbsp;</h4>
       <TechList style={{ display: 'inline' }}>
         <LinkedLI href="https://nodejs.org/">Node.js</LinkedLI>
         {', '}
@@ -77,7 +92,7 @@ export default () => (
       </TechList>
       <br />
       <br />
-      <h4 style={{ display: 'inline' }}>{'Databases: '}</h4>
+      <h4 style={{ display: 'inline' }}>Databases:&nbsp;</h4>
       <TechList style={{ display: 'inline' }}>
         <LinkedLI href="https://www.mysql.com/">MySQL</LinkedLI>
         {', '}
@@ -87,7 +102,7 @@ export default () => (
       </TechList>
       <br />
       <br />
-      <h4 style={{ display: 'inline' }}>{'Other: '}</h4>
+      <h4 style={{ display: 'inline' }}>Other:&nbsp;</h4>
       <TechList style={{ display: 'inline' }}>
         <LinkedLI href="https://git-scm.com/">Git</LinkedLI>
         {', '}
@@ -98,6 +113,8 @@ export default () => (
         <LinkedLI href="https://www.docker.com/">Docker</LinkedLI>
         {', '}
         <LinkedLI href="https://eslint.org/">ESLint</LinkedLI>
+        {', '}
+        <LinkedLI href="https://prettier.io/">Prettier</LinkedLI>
         {', '}
         <LinkedLI href="https://jestjs.io/">Jest</LinkedLI>
         {', '}
