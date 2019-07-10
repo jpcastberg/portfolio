@@ -18,7 +18,7 @@ const MainContent = styled.div`
 const Headshot = styled(Img)`
   border: 2px solid rgb(200, 200, 200);
   border-radius: 100%;
-  min-height:220px;
+  min-height: 220px;
 `;
 
 const Nav = styled.nav`
@@ -66,13 +66,12 @@ export default ({ data }) => (
       <div>
         <p>
           I'm John, a full stack web developer from San Francisco, CA.
-          <br/>
-          I build websites using React and Node.
+          <br />I build websites using React and Node.
         </p>
       </div>
       <Nav>
-        <NavLink to='/about'>About</NavLink>
-        <NavLink to='/projects'>Projects</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
       </Nav>
     </MainContent>
   </ContentWrapper>
@@ -102,4 +101,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Heading, SubHeading } from '../components/Heading'
+import { Heading, SubHeading } from '../components/Heading';
 
 const Content = styled.div`
   position: relative;
@@ -17,67 +17,100 @@ const TechList = styled.ul`
 
 const LinkedLI = ({ children, href }) => (
   <li style={{ display: 'inline' }}>
-    <a style={{ color: 'white' }} href={href} target="_blank" rel="noopener noreferrer">{children}</a>
+    <a
+      style={{ color: 'white' }}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
   </li>
 );
 
 export default () => (
-    <Content>
-      <Heading>About</Heading>
-      <div>
-        <p>
-          I love creating scaleable, responsive, mobile-first web applications, discovering clever solutions to technical problems, and learning new technologies.
-        </p>
-        <br/>
-        <p>
-          When I'm not writing code, I enjoy bicycling around San Francisco, meeting new people to share ideas with, and playing bass guitar in my band, "You".
-        </p>
-      </div>
-      <br/>
-      <SubHeading>
-        Technologies Used
-      </SubHeading>
-      <div>
-        <h4 style={{display: 'inline'}}>{'Front End: '}</h4>
-        <TechList>
-          <LinkedLI href="https://reactjs.org">React.js</LinkedLI>{', '}
-          <LinkedLI href="https://www.gatsbyjs.org/">Gatsby.js</LinkedLI>{', '}
-          <li style={{display: 'inline'}}>HTML5/CSS/JS</li>{', '}
-          <LinkedLI href="https://www.styled-components.com/">Styled Components</LinkedLI>{', '}
-          <LinkedLI href="https://github.com/css-modules/css-modules">CSS Modules</LinkedLI>{', '}
-          <LinkedLI href="https://jquery.com/">JQuery</LinkedLI>
-        </TechList>
-        <br/>
-        <br/>
-        <h4 style={{display: 'inline'}}>{'Server Side: '}</h4>
-        <TechList style={{display: 'inline'}}>
-          <LinkedLI href="https://nodejs.org/">Node.js</LinkedLI>{', '}
-          <LinkedLI href="http://expressjs.com/">Express.js</LinkedLI>{', '} 
-          <li style={{display: 'inline'}}>Restful APIs</li>
-        </TechList>
-        <br/>
-        <br/>
-        <h4 style={{display: 'inline'}}>{'Databases: '}</h4>
-        <TechList style={{display: 'inline'}}>
-          <LinkedLI href="https://www.mysql.com/">MySQL</LinkedLI>{', '} 
-          <LinkedLI href="https://www.mongodb.com/">MongoDB</LinkedLI>{', '} 
-          <LinkedLI href="https://riak.com/">Riak</LinkedLI>
-        </TechList>
-        <br/>
-        <br/>
-        <h4 style={{display: 'inline'}}>{'Other: '}</h4>
-        <TechList style={{display: 'inline'}}>
-          <LinkedLI href="https://git-scm.com/">Git</LinkedLI>{', '} 
-          <LinkedLI href="https://webpack.js.org/">Webpack</LinkedLI>{', '} 
-          <LinkedLI href="https://aws.amazon.com/">AWS (S3, EC2)</LinkedLI>{', '} 
-          <LinkedLI href="https://www.docker.com/">Docker</LinkedLI>{', '} 
-          <LinkedLI href="https://eslint.org/">ESLint</LinkedLI>{', '} 
-          <LinkedLI href="https://jestjs.io/">Jest</LinkedLI>{', '} 
-          <LinkedLI href="https://airbnb.io/enzyme/">Enzyme</LinkedLI>{', '} 
-          <LinkedLI href="https://developers.google.com/web/tools/puppeteer/">Puppeteer</LinkedLI>{', '} 
-          <LinkedLI href="https://mochajs.org/">Mocha</LinkedLI>{', '} 
-          <LinkedLI href="https://www.chaijs.com/">Chai</LinkedLI>
-        </TechList>
-      </div>
-    </Content>
+  <Content>
+    <Heading>About</Heading>
+    <div>
+      <p>
+        I love creating scaleable, responsive, mobile-first web applications,
+        discovering clever solutions to technical problems, and learning new
+        technologies.
+      </p>
+      <br />
+      <p>
+        When I'm not writing code, I enjoy bicycling around San Francisco,
+        meeting new people to share ideas with, and playing bass guitar in my
+        band, "You".
+      </p>
+    </div>
+    <br />
+    <SubHeading>Technologies Used</SubHeading>
+    <div>
+      <h4 style={{ display: 'inline' }}>{'Front End: '}</h4>
+      <TechList>
+        <LinkedLI href="https://reactjs.org">React.js</LinkedLI>
+        {', '}
+        <LinkedLI href="https://www.gatsbyjs.org/">Gatsby.js</LinkedLI>
+        {', '}
+        <li style={{ display: 'inline' }}>HTML5/CSS/JS</li>
+        {', '}
+        <LinkedLI href="https://www.styled-components.com/">
+          Styled Components
+        </LinkedLI>
+        {', '}
+        <LinkedLI href="https://github.com/css-modules/css-modules">
+          CSS Modules
+        </LinkedLI>
+        {', '}
+        <LinkedLI href="https://jquery.com/">JQuery</LinkedLI>
+      </TechList>
+      <br />
+      <br />
+      <h4 style={{ display: 'inline' }}>{'Server Side: '}</h4>
+      <TechList style={{ display: 'inline' }}>
+        <LinkedLI href="https://nodejs.org/">Node.js</LinkedLI>
+        {', '}
+        <LinkedLI href="http://expressjs.com/">Express.js</LinkedLI>
+        {', '}
+        <li style={{ display: 'inline' }}>Restful APIs</li>
+      </TechList>
+      <br />
+      <br />
+      <h4 style={{ display: 'inline' }}>{'Databases: '}</h4>
+      <TechList style={{ display: 'inline' }}>
+        <LinkedLI href="https://www.mysql.com/">MySQL</LinkedLI>
+        {', '}
+        <LinkedLI href="https://www.mongodb.com/">MongoDB</LinkedLI>
+        {', '}
+        <LinkedLI href="https://riak.com/">Riak</LinkedLI>
+      </TechList>
+      <br />
+      <br />
+      <h4 style={{ display: 'inline' }}>{'Other: '}</h4>
+      <TechList style={{ display: 'inline' }}>
+        <LinkedLI href="https://git-scm.com/">Git</LinkedLI>
+        {', '}
+        <LinkedLI href="https://webpack.js.org/">Webpack</LinkedLI>
+        {', '}
+        <LinkedLI href="https://aws.amazon.com/">AWS (S3, EC2)</LinkedLI>
+        {', '}
+        <LinkedLI href="https://www.docker.com/">Docker</LinkedLI>
+        {', '}
+        <LinkedLI href="https://eslint.org/">ESLint</LinkedLI>
+        {', '}
+        <LinkedLI href="https://jestjs.io/">Jest</LinkedLI>
+        {', '}
+        <LinkedLI href="https://airbnb.io/enzyme/">Enzyme</LinkedLI>
+        {', '}
+        <LinkedLI href="https://developers.google.com/web/tools/puppeteer/">
+          Puppeteer
+        </LinkedLI>
+        {', '}
+        <LinkedLI href="https://mochajs.org/">Mocha</LinkedLI>
+        {', '}
+        <LinkedLI href="https://www.chaijs.com/">Chai</LinkedLI>
+      </TechList>
+    </div>
+  </Content>
 );
