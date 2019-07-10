@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -49,7 +50,7 @@ const ExternalLinks = styled.ul`
   width: 110px;
 `;
 
-export default ({ data }) => (
+const MainPage = ({ data }) => (
   <ContentWrapper>
     <MainContent>
       <Headshot fixed={data.headshot.childImageSharp.fixed} />
@@ -65,8 +66,9 @@ export default ({ data }) => (
       </ExternalLinks>
       <div>
         <p>
-          I'm John, a full stack web developer from San Francisco, CA.
-          <br />I build websites using React and Node.
+          I&apos;m John, a full stack web developer from San Francisco, CA.
+          <br />
+          I build websites using React and Node.
         </p>
       </div>
       <Nav>
@@ -102,3 +104,21 @@ export const query = graphql`
     }
   }
 `;
+
+MainPage.propTypes = {
+  data: propTypes.shape({
+    headshot: propTypes.object,
+    github: propTypes.object,
+    linkedin: propTypes.object,
+  }),
+};
+
+MainPage.defaultProps = {
+  data: {
+    headshot: {},
+    github: {},
+    linkedin: {},
+  },
+};
+
+export default MainPage;
