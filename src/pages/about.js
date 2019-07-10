@@ -54,9 +54,9 @@ export default () => (
       </p>
       <br />
       <p>
-        When I&aposm not writing code, I enjoy bicycling around San Francisco,
+        When I&apos;m not writing code, I enjoy bicycling around San Francisco,
         meeting new people to share ideas with, and playing bass guitar in my
-        band, &quotYou&quot.
+        band, &quot;You&quot;.
       </p>
     </div>
     <br />
@@ -82,7 +82,7 @@ export default () => (
       </TechList>
       <br />
       <br />
-      <h4 style={{ display: 'inline' }}>Server Side:&nbsp;</h4>
+      <h4 style={{ display: 'inline' }}>Server Side: &nbsp;</h4>
       <TechList style={{ display: 'inline' }}>
         <LinkedLI href="https://nodejs.org/">Node.js</LinkedLI>
         {', '}
@@ -92,7 +92,7 @@ export default () => (
       </TechList>
       <br />
       <br />
-      <h4 style={{ display: 'inline' }}>Databases:&nbsp;</h4>
+      <h4 style={{ display: 'inline' }}>Databases: &nbsp;</h4>
       <TechList style={{ display: 'inline' }}>
         <LinkedLI href="https://www.mysql.com/">MySQL</LinkedLI>
         {', '}
@@ -102,7 +102,7 @@ export default () => (
       </TechList>
       <br />
       <br />
-      <h4 style={{ display: 'inline' }}>Other:&nbsp;</h4>
+      <h4 style={{ display: 'inline' }}>Other: &nbsp;</h4>
       <TechList style={{ display: 'inline' }}>
         <LinkedLI href="https://git-scm.com/">Git</LinkedLI>
         {', '}
