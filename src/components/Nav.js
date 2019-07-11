@@ -69,9 +69,13 @@ class Nav extends React.Component {
     return prevState;
   }
 
-  createNavItem(navDestination) {
+  getCurrentPageName() {
     const { props: { pathname } } = this;
-    const currentPage = pathname.split('/')[1];
+    return pathname.split('/')[1];
+  }
+
+  createNavItem(navDestination) {
+    const currentPage = this.getCurrentPageName();
     let userFacingNavText;
     if (navDestination === '') {
       userFacingNavText = 'Main';
