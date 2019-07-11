@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-export default styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100vw;
-  height: 100vh;
+const ContentWrapper = styled.div`
+  position: relative;
+  top: 50px;
+  width: 90%;
+  margin: 0px auto;
 `;
+
+export default ContentWrapper;
