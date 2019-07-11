@@ -43,32 +43,6 @@ const NavLink = styled(Link)`
 `;
 
 class Nav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { out: null };
-  }
-
-  componentDidMount() {
-    const { props: { pathname } } = this;
-    if (pathname === '/') {
-      this.setState({ out: true });
-    } else if (pathname !== '/') {
-      this.setState({ out: false });
-    }
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { pathname: nextPage } = nextProps;
-    const { out } = prevState;
-    if (nextPage !== '/' && out) {
-      return { out: false };
-    }
-    if (nextPage === '/' && !out) {
-      return { out: true };
-    }
-    return prevState;
-  }
-
   getCurrentPageName() {
     const { props: { pathname } } = this;
     return pathname.split('/')[1];
@@ -89,7 +63,8 @@ class Nav extends React.Component {
   }
 
   render() {
-    const { state: { out } } = this;
+    const currentPage = this.getCurrentPageName();
+    const out = currentPage === '';
     return (
       <NavArea out={out}>
         <NavContainer>
