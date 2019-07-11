@@ -71,18 +71,17 @@ class Nav extends React.Component {
 
   createNavItem(navDestination) {
     const { props: { pathname } } = this;
+    const currentPage = pathname.split('/')[1];
     let userFacingNavText;
-    if (navDestination === '/') {
+    if (navDestination === '') {
       userFacingNavText = 'Main';
     } else {
-      userFacingNavText = `${navDestination[1].toUpperCase()}${navDestination.slice(
-        2,
-      )}`;
+      userFacingNavText = `${navDestination[0].toUpperCase()}${navDestination.slice(1)}`;
     }
-    if (navDestination === pathname) {
+    if (navDestination === currentPage) {
       return <span style={{ cursor: 'default' }}>{userFacingNavText}</span>;
     }
-    return <NavLink to={navDestination}>{userFacingNavText}</NavLink>;
+    return <NavLink to={`/${navDestination}`}>{userFacingNavText}</NavLink>;
   }
 
   render() {
@@ -90,9 +89,9 @@ class Nav extends React.Component {
     return (
       <NavArea out={out}>
         <NavContainer>
-          <li>{this.createNavItem('/')}</li>
-          <li>{this.createNavItem('/about')}</li>
-          <li>{this.createNavItem('/projects')}</li>
+          <li>{this.createNavItem('')}</li>
+          <li>{this.createNavItem('about')}</li>
+          <li>{this.createNavItem('projects')}</li>
         </NavContainer>
       </NavArea>
     );
