@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -r https://github.com/jpcastberg/jpcastberg.github.io.git -b master",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
@@ -33,6 +34,7 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.18.2"
   },
   "repository": {
