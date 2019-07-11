@@ -21,7 +21,7 @@ const getTransitionStyles = {
   },
 };
 
-export default class Transition extends React.PureComponent {
+class Transition extends React.PureComponent {
   render() {
     const { children, pathname } = this.props;
 
@@ -62,3 +62,5 @@ Transition.defaultProps = {
   children: null,
   pathname: '/',
 };
+
+export default Transition;

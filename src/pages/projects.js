@@ -1,11 +1,10 @@
 import React from 'react';
-import ContentWrapper from '../components/ContentWrapper';
 
-export default () => (
+const Projects = () => (
   <div>
     <div>PROJECTS Outside content wrapper</div>
-    <ContentWrapper>
-      <div>This is the content within Content Wrapper</div>
-    </ContentWrapper>
+    <div>This is the content within Content Wrapper</div>
   </div>
 );
+
+export default Projects;

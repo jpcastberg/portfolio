@@ -2,14 +2,8 @@ import React from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Heading, SubHeading } from '../components/Heading';
-
-const Content = styled.div`
-  position: relative;
-  top: 50px;
-  width: 90%;
-  margin: 0px auto;
-`;
+import ContentWrapper from '../components/ContentWrapper';
+import { Heading, SubHeading } from '../components/Headings';
 
 const TechList = styled.ul`
   display: inline;
@@ -43,8 +37,8 @@ LinkedLI.defaultProps = {
   href: '',
 };
 
-export default () => (
-  <Content>
+const About = () => (
+  <ContentWrapper>
     <Heading>About</Heading>
     <div>
       <p>
@@ -129,5 +123,7 @@ export default () => (
         <LinkedLI href="https://www.chaijs.com/">Chai</LinkedLI>
       </TechList>
     </div>
-  </Content>
+  </ContentWrapper>
 );
+
+export default About;

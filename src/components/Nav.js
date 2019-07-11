@@ -41,7 +41,8 @@ const NavContainer = styled.ul`
 const NavLink = styled(Link)`
   color: white;
 `;
-export default class Nav extends React.Component {
+
+class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = { out: null };
@@ -105,3 +106,5 @@ Nav.propTypes = {
 Nav.defaultProps = {
   pathname: '/',
 };
+
+export default Nav;

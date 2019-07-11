@@ -5,7 +5,16 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import ExternalLink from '../components/ExternalLink';
-import ContentWrapper from '../components/ContentWrapper';
+
+const MainWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+`;
 
 const MainContent = styled.div`
   display: flex;
@@ -51,7 +60,7 @@ const ExternalLinks = styled.ul`
 `;
 
 const MainPage = ({ data }) => (
-  <ContentWrapper>
+  <MainWrapper>
     <MainContent>
       <Headshot fixed={data.headshot.childImageSharp.fixed} />
       <ExternalLinks>
@@ -76,7 +85,7 @@ const MainPage = ({ data }) => (
         <NavLink to="/projects">Projects</NavLink>
       </Nav>
     </MainContent>
-  </ContentWrapper>
+  </MainWrapper>
 );
 
 export const query = graphql`
