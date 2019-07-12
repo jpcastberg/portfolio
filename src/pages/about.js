@@ -13,7 +13,6 @@ const TechList = styled.ul`
 const LinkedLI = ({ children, href }) => (
   <li style={{ display: 'inline' }}>
     <a
-      style={{ color: 'white' }}
       href={href}
       target="_blank"
       rel="noopener noreferrer"

@@ -41,7 +41,6 @@ const Nav = styled.nav`
 
 const NavLink = styled(Link)`
   background-color: rgba(0, 0, 0, 0);
-  color: white;
   text-align: center;
   text-decoration: none;
   border: 2px solid white;

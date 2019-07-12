@@ -38,10 +38,6 @@ const NavContainer = styled.ul`
   margin: 0px auto;
 `;
 
-const NavLink = styled(Link)`
-  color: white;
-`;
-
 class Nav extends React.Component {
   getCurrentPageName() {
     const { props: { pathname } } = this;
@@ -59,7 +55,7 @@ class Nav extends React.Component {
     if (navDestination === currentPage) {
       return <span style={{ cursor: 'default' }}>{userFacingNavText}</span>;
     }
-    return <NavLink to={`/${navDestination}`}>{userFacingNavText}</NavLink>;
+    return <Link to={`/${navDestination}`}>{userFacingNavText}</Link>;
   }
 
   render() {
