@@ -45,9 +45,11 @@ const ProjectInformation = styled.div`
 `;
 
 const ProjectLinks = styled.div`
+  @media screen and (min-width: 601px){
+    margin-top: 10px;
+  }
   grid-area: links;
   text-align: center;
-  margin: 5px 0px;
 `;
 
 const Project = ({ name, fixed, description, techUsed, links }) => (
