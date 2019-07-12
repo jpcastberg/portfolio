@@ -32,6 +32,13 @@ export const query = graphql`
         }
       }
     }
+    portfolio: file(relativePath: { eq: "images/portfolio.png" }) {
+      childImageSharp {
+        fixed(width: 220) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `;
 

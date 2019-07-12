@@ -1,7 +1,7 @@
 [
   {
     "name": "Safeway Coupon Clipper",
-    "description": "A convenient, automated way to clip all of your Safeway Just4U Coupons",
+    "description": "A convenient, automated way to clip all of your Safeway Just4U Coupons.",
     "imgName": "safeway",
     "techUsed": [
       "Node.js",
@@ -12,6 +12,25 @@
       {
         "displayName": "Github",
         "url": "https://github.com/jpcastberg/safewayCouponClipper"
+      }
+    ]
+  },
+  {
+    "name": "Personal Portfolio",
+    "description": "A custom website built to showcase my projects.",
+    "imgName": "portfolio",
+    "techUsed": [
+      "Gatsby.js",
+      "React.js",
+      "Styled Components",
+      "Graph QL",
+      "ESLint",
+      "Github Pages"
+    ],
+    "links": [
+      {
+        "displayName": "Github",
+        "url": "https://github.com/jpcastberg/portfolio"
       }
     ]
   }
