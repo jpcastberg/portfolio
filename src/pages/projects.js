@@ -5,22 +5,29 @@ import ContentWrapper from '../components/ContentWrapper';
 import { Heading } from '../components/Headings';
 import Project from '../components/Project';
 
+import projectsData from '../data/projects.json';
+
 const Projects = ({ data }) => (
   <ContentWrapper>
     <Heading>Projects</Heading>
-    <Project name="Safeway Coupon Clipper" fixed={data.headshot.childImageSharp.fixed}>
-      This is children
-      <br/>
-      Tech Used: doodley doo
-    </Project>
+    {projectsData.map(project => (
+      <Project
+        key={project.name}
+        name={project.name}
+        fixed={data[project.imgName].childImageSharp.fixed}
+        description={project.description}
+        techUsed={project.techUsed}
+        links={project.links}
+      />
+    ))}
   </ContentWrapper>
 );
 
 export const query = graphql`
   query {
-    headshot: file(relativePath: { eq: "images/headshot_square.png" }) {
+    safeway: file(relativePath: { eq: "images/safeway.png" }) {
       childImageSharp {
-        fixed(width: 220, height: 220) {
+        fixed(width: 220) {
           ...GatsbyImageSharpFixed
         }
       }
