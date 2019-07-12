@@ -5,12 +5,12 @@ import Img from 'gatsby-image';
 const ProjectArea = styled.div`
   @media screen and (min-width: 601px) {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 30px repeat(2, auto);
     grid-template-areas:
-      "img title title"
-      "img info info"
-      "links . .";
+      "img title"
+      "img info"
+      "links .";
     justify-items: center;
   }
   @media screen and (max-width: 600px) {
