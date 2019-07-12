@@ -18,6 +18,10 @@ const Layout = ({ children, location: { pathname } }) => (
           name: 'keywords',
           content: 'web, software, development, portfolio, San Francisco',
         },
+        {
+          name: 'theme-color',
+          content: 'darkgrey',
+        }
       ]}
     />
     <Nav pathname={pathname} />
