@@ -19,7 +19,7 @@ const NavArea = styled.div`
   height: 50px;
   background-color: black;
   border-bottom: thin solid white;
-  visibility: ${props => (props.out ? 'hidden' : 'visible')};
+  display: ${props => (props.out ? 'none' : 'block')};
   animation: ${props => (props.out ? fadeOut : fadeIn)} 0.3s linear;
   transition: visibility 0.3s linear;
   z-index: 1;
