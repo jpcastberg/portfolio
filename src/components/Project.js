@@ -53,6 +53,7 @@ const ProjectLinks = styled.div`
   text-align: center;
 `;
 
+// eslint-disable-next-line object-curly-newline
 const Project = ({ name, fixed, description, techUsed, links }) => (
   <ProjectArea>
     <ProjectName>{name}</ProjectName>
@@ -63,16 +64,16 @@ const Project = ({ name, fixed, description, techUsed, links }) => (
       <p>
       Tech Used:&nbsp;
         {techUsed.map((tech, idx) => (
-          <span key={idx}>{`${tech}${idx !== techUsed.length - 1 ? ', ' : ''}`}</span>
+          <span key={tech}>{`${tech}${idx !== techUsed.length - 1 ? ', ' : ''}`}</span>
         ))}
       </p>
     </ProjectInformation>
     <ProjectLinks>
       {links.map((link, idx) => {
-        const linkElement = (<a href={link.url} target="_blank" rel="noopener noreferrer">{link.displayName}</a>);
+        const linkElement = (<a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer">{link.displayName}</a>);
         if (idx !== links.length - 1) {
           return (
-            <span>
+            <span key={link.url}>
               {linkElement}
               <span>&nbsp;|&nbsp;</span>
             </span>

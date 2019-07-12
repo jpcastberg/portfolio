@@ -48,7 +48,7 @@ const generateFormattedSkills = skillType => (
       ? ', '
       : null;
     return (
-      <span>
+      <span key={name}>
         {li}
         {delimiter}
       </span>
