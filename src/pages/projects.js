@@ -46,6 +46,13 @@ export const query = graphql`
         }
       }
     }
+    brand_media_id: file(relativePath: { eq: "images/brand_media_id.png" }) {
+      childImageSharp {
+        fixed(width: 220) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `;
 

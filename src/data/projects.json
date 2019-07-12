@@ -33,5 +33,21 @@
         "url": "https://github.com/jpcastberg/portfolio"
       }
     ]
+  },
+  {
+    "name": "Brand Media ID",
+    "description": "A blog/placeholder website built in Wordpress for a client.",
+    "imgName": "brand_media_id",
+    "techUsed": [
+      "Wordpress",
+      "HTML/CSS",
+      "Mailchimp API"
+    ],
+    "links": [
+      {
+        "displayName": "Live",
+        "url": "http://brandmediaid.com/"
+      }
+    ]
   }
 ]
