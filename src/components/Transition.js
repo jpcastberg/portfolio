@@ -51,16 +51,13 @@ class Transition extends React.PureComponent {
 
 Transition.propTypes = {
   children: propTypes.oneOfType([
-    propTypes.arrayOf(propTypes.node),
-    propTypes.node,
-    propTypes.object,
-  ]),
-  pathname: propTypes.string,
-};
-
-Transition.defaultProps = {
-  children: null,
-  pathname: '/',
+    propTypes.arrayOf(
+      propTypes.node.isRequired,
+    ).isRequired,
+    propTypes.node.isRequired,
+    propTypes.object.isRequired,
+  ]).isRequired,
+  pathname: propTypes.string.isRequired,
 };
 
 export default Transition;

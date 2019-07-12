@@ -12,18 +12,13 @@ const ExternalLink = ({ fixed, href }) => (
 
 ExternalLink.propTypes = {
   fixed: propTypes.shape({
-    base64: propTypes.string,
-    height: propTypes.number,
-    src: propTypes.string,
-    srcSet: propTypes.string,
-    width: propTypes.number,
-  }),
-  href: propTypes.string,
-};
-
-ExternalLink.defaultProps = {
-  fixed: {},
-  href: '',
+    base64: propTypes.string.isRequired,
+    height: propTypes.number.isRequired,
+    src: propTypes.string.isRequired,
+    srcSet: propTypes.string.isRequired,
+    width: propTypes.number.isRequired,
+  }).isRequired,
+  href: propTypes.string.isRequired,
 };
 
 export default ExternalLink;

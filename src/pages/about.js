@@ -29,16 +29,13 @@ const LinkedLI = ({ children, url }) => (
 
 LinkedLI.propTypes = {
   children: propTypes.oneOfType([
-    propTypes.arrayOf(propTypes.node),
-    propTypes.node,
-    propTypes.object,
-  ]),
-  url: propTypes.string,
-};
-
-LinkedLI.defaultProps = {
-  children: null,
-  url: '',
+    propTypes.arrayOf(
+      propTypes.node.isRequired,
+    ).isRequired,
+    propTypes.node.isRequired,
+    propTypes.object.isRequired,
+  ]).isRequired,
+  url: propTypes.string.isRequired,
 };
 
 const generateFormattedSkills = skillType => (

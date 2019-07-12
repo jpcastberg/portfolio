@@ -74,11 +74,7 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
-  pathname: propTypes.string,
-};
-
-Nav.defaultProps = {
-  pathname: '/',
+  pathname: propTypes.string.isRequired,
 };
 
 export default Nav;

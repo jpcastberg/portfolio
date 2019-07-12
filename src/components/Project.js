@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
@@ -62,7 +63,7 @@ const Project = ({ name, fixed, description, techUsed, links }) => (
       <p>
       Tech Used:&nbsp;
         {techUsed.map((tech, idx) => (
-          <span>{`${tech}${idx !== techUsed.length - 1 ? ', ' : ''}`}</span>
+          <span key={idx}>{`${tech}${idx !== techUsed.length - 1 ? ', ' : ''}`}</span>
         ))}
       </p>
     </ProjectInformation>
@@ -82,5 +83,25 @@ const Project = ({ name, fixed, description, techUsed, links }) => (
     </ProjectLinks>
   </ProjectArea>
 );
+
+Project.propTypes = {
+  name: propTypes.string.isRequired,
+  fixed: propTypes.shape({
+    base64: propTypes.string.isRequired,
+    height: propTypes.number.isRequired,
+    src: propTypes.string.isRequired,
+    srcSet: propTypes.string.isRequired,
+    width: propTypes.number.isRequired,
+  }).isRequired,
+  description: propTypes.string.isRequired,
+  techUsed: propTypes.arrayOf(
+    propTypes.string.isRequired,
+  ).isRequired,
+  links: propTypes.arrayOf(
+    propTypes.objectOf(
+      propTypes.string.isRequired,
+    ).isRequired,
+  ).isRequired,
+};
 
 export default Project;

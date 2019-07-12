@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import ContentWrapper from '../components/ContentWrapper';
@@ -22,6 +23,12 @@ const Projects = ({ data }) => (
     ))}
   </ContentWrapper>
 );
+
+Projects.propTypes = {
+  data: propTypes.objectOf(
+    propTypes.object.isRequired,
+  ).isRequired,
+};
 
 export const query = graphql`
   query {

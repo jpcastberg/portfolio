@@ -115,18 +115,10 @@ export const query = graphql`
 
 MainPage.propTypes = {
   data: propTypes.shape({
-    headshot: propTypes.object,
-    github: propTypes.object,
-    linkedin: propTypes.object,
-  }),
-};
-
-MainPage.defaultProps = {
-  data: {
-    headshot: {},
-    github: {},
-    linkedin: {},
-  },
+    headshot: propTypes.object.isRequired,
+    github: propTypes.object.isRequired,
+    linkedin: propTypes.object.isRequired,
+  }).isRequired,
 };
 
 export default MainPage;
