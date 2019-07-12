@@ -1,0 +1,100 @@
+{
+  "frontEnd": [
+    {
+      "name": "React.js",
+      "url": "https://reactjs.org"
+    },
+    {
+      "name": "Gatsby.js",
+      "url": "https://www.gatsbyjs.org/"
+    },
+    {
+      "name": "HTML5/CSS/JS"
+    },
+    {
+      "name": "Styled Components",
+      "url": "https://www.styled-components.com/"
+    },
+    {
+      "name": "CSS Modules",
+      "url": "https://github.com/css-modules/css-modules"
+    },
+    {
+      "name": "JQuery",
+      "url": "https://jquery.com/"
+    }
+  ],
+  "serverSide": [
+    {
+      "name": "Node.js",
+      "url": "https://nodejs.org/"
+    },
+    {
+      "name": "Express.js",
+      "url": "http://expressjs.com/"
+    },
+    {
+      "name": "Restful APIs"
+    }
+  ],
+  "databases": [
+    {
+      "name": "MySQL",
+      "url": "https://www.mysql.com/"
+    },
+    {
+      "name": "MongoDB",
+      "url": "https://www.mongodb.com/"
+    },
+    {
+      "name": "Riak",
+      "url": "https://riak.com/"
+    }
+  ],
+  "other": [
+    {
+      "name": "Git",
+      "url": "https://git-scm.com/"
+    },
+    {
+      "name": "Webpack",
+      "url": "https://webpack.js.org/"
+    },
+    {
+      "name": "AWS (S3, EC2)",
+      "url":"https://aws.amazon.com/"
+    },
+    {
+      "name": "Docker",
+      "url": "https://www.docker.com/"
+    },
+    {
+      "name": "ESLint",
+      "url": "https://eslint.org/"
+    },
+    {
+      "name": "Prettier",
+      "url": "https://prettier.io/"
+    },
+    {
+      "name": "Jest",
+      "url": "https://jestjs.io/"
+    },
+    {
+      "name": "Enzyme",
+      "url": "https://airbnb.io/enzyme/"
+    },
+    {
+      "name": "Puppeteer",
+      "url": "https://developers.google.com/web/tools/puppeteer/"
+    },
+    {
+      "name": "Mocha",
+      "url": "https://mochajs.org/"
+    },
+    {
+      "name": "Chai",
+      "url": "https://www.chaijs.com/"
+    }
+  ]
+}
