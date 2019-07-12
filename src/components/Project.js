@@ -3,16 +3,26 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 const ProjectArea = styled.div`
-  width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-template-rows: 30px repeat(2, auto);
-  grid-template-areas:
-    "img title title"
-    "img info info"
-    "links . .";
-  justify-items: center;
+  @media screen and (min-width: 601px) {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 30px repeat(2, auto);
+    grid-template-areas:
+      "img title title"
+      "img info info"
+      "links . .";
+    justify-items: center;
+  }
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 70vh;
+  }
+  width: 85%;
   border: thin solid white;
+  border-radius: 10px;
   padding: 10px;
   margin: 10px auto;
 `;
@@ -46,6 +56,7 @@ const Project = ({ name, fixed, description, techUsed, links }) => (
     <ProjectImg fixed={fixed} />
     <ProjectInformation>
       <p>{description}</p>
+      <br />
       <p>
       Tech Used:&nbsp;
         {techUsed.map((tech, idx) => (
