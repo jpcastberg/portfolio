@@ -49,5 +49,29 @@
         "url": "http://brandmediaid.com/"
       }
     ]
+  },
+  {
+    "name": "City Clothing Supply - Item Viewer",
+    "description": "A module built for a team utilizing service-oriented archetecture to create a dynamic, engaging shopping experience.",
+    "imgName": "city_clothing_supply",
+    "techUsed": [
+      "React",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "Webpack",
+      "Jest",
+      "Enzyme"
+    ],
+    "links": [
+      {
+        "displayName": "Github",
+        "url": "https://github.com/jpcastberg/itemView-module"
+      },
+      {
+        "displayName": "Live",
+        "url": "https://jpcastberg.github.io/itemView-module/"
+      }
+    ]
   }
 ]

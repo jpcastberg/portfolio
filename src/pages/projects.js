@@ -53,6 +53,13 @@ export const query = graphql`
         }
       }
     }
+    city_clothing_supply: file(relativePath: { eq: "images/city_clothing_supply.png" }) {
+      childImageSharp {
+        fixed(width: 220) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `;
 
