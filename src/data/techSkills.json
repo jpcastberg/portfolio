@@ -1,11 +1,11 @@
 {
   "frontEnd": [
     {
-      "name": "React.js",
+      "name": "React",
       "url": "https://reactjs.org"
     },
     {
-      "name": "Gatsby.js",
+      "name": "Gatsby",
       "url": "https://www.gatsbyjs.org/"
     },
     {
@@ -26,11 +26,11 @@
   ],
   "serverSide": [
     {
-      "name": "Node.js",
+      "name": "Node",
       "url": "https://nodejs.org/"
     },
     {
-      "name": "Express.js",
+      "name": "Express",
       "url": "http://expressjs.com/"
     },
     {
