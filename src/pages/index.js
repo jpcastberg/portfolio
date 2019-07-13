@@ -55,7 +55,7 @@ const ExternalLinks = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   height: 40px;
-  width: 170px;
+  width: 220px;
 `;
 
 const MainPage = ({ data }) => (
@@ -63,6 +63,11 @@ const MainPage = ({ data }) => (
     <MainContent>
       <Headshot fixed={data.headshot.childImageSharp.fixed} />
       <ExternalLinks>
+        <ExternalLink
+          fixed={data.email.childImageSharp.fixed}
+          href="mailto:jpcastberg@gmail.com"
+          email
+        />
         <ExternalLink
           fixed={data.github.childImageSharp.fixed}
           href="https://github.com/jpcastberg"
@@ -100,6 +105,13 @@ export const query = graphql`
         }
       }
     }
+    email: file(relativePath: { eq: "images/email.png" }) {
+      childImageSharp {
+        fixed(width: 40, height: 40) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     github: file(relativePath: { eq: "images/github.png" }) {
       childImageSharp {
         fixed(width: 40, height: 40) {
@@ -127,6 +139,7 @@ export const query = graphql`
 MainPage.propTypes = {
   data: propTypes.shape({
     headshot: propTypes.object.isRequired,
+    email: propTypes.object.isRequired,
     github: propTypes.object.isRequired,
     linkedin: propTypes.object.isRequired,
     resume: propTypes.object.isRequired,
