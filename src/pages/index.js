@@ -55,7 +55,7 @@ const ExternalLinks = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   height: 40px;
-  width: 110px;
+  width: 170px;
 `;
 
 const MainPage = ({ data }) => (
@@ -70,6 +70,10 @@ const MainPage = ({ data }) => (
         <ExternalLink
           fixed={data.linkedin.childImageSharp.fixed}
           href="https://linkedin.com/in/jpcastberg"
+        />
+        <ExternalLink
+          fixed={data.resume.childImageSharp.fixed}
+          href="https://docs.google.com/document/d/1tLLfDaQDAu5_iWLsrZyVs939kTlc5T0z_zbV4c4jVQw/preview"
         />
       </ExternalLinks>
       <div>
@@ -110,6 +114,13 @@ export const query = graphql`
         }
       }
     }
+    resume: file(relativePath: { eq: "images/resume.png" }) {
+      childImageSharp {
+        fixed(width: 32, height: 40) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `;
 
@@ -118,6 +129,7 @@ MainPage.propTypes = {
     headshot: propTypes.object.isRequired,
     github: propTypes.object.isRequired,
     linkedin: propTypes.object.isRequired,
+    resume: propTypes.object.isRequired,
   }).isRequired,
 };
 
