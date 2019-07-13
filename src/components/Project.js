@@ -22,7 +22,7 @@ const ProjectArea = styled.div`
     min-height: 70vh;
   }
   width: 85%;
-  border: thin solid white;
+  border: thin solid #ffffff;
   border-radius: 10px;
   padding: 25px;
   margin: 10px auto;

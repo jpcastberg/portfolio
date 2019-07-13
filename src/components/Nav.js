@@ -17,8 +17,8 @@ const NavArea = styled.div`
   position: fixed;
   width: 100%;
   height: 50px;
-  background-color: black;
-  border-bottom: thin solid white;
+  background-color: #000000;
+  border-bottom: thin solid #ffffff;
   display: ${props => (props.out ? 'none' : 'block')};
   animation: ${props => (props.out ? fadeOut : fadeIn)} 0.3s linear;
   transition: visibility 0.3s linear;

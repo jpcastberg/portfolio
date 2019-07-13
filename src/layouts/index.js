@@ -20,7 +20,7 @@ const Layout = ({ children, location: { pathname } }) => (
         },
         {
           name: 'theme-color',
-          content: 'rgb(50, 50, 50)',
+          content: '#323232',
         },
       ]}
     />

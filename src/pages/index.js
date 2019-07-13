@@ -26,7 +26,7 @@ const MainContent = styled.div`
 `;
 
 const Headshot = styled(Img)`
-  border: 2px solid rgb(200, 200, 200);
+  border: 2px solid #c8c8c8;
   border-radius: 100%;
   min-height: 220px;
 `;
@@ -43,7 +43,7 @@ const NavLink = styled(Link)`
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
   text-decoration: none;
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   border-radius: 10px;
   padding: 8px;
   width: 100px;
