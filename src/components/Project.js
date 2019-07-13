@@ -24,7 +24,7 @@ const ProjectArea = styled.div`
   width: 85%;
   border: thin solid white;
   border-radius: 10px;
-  padding: 10px;
+  padding: 25px;
   margin: 10px auto;
 `;
 
