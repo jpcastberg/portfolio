@@ -23,21 +23,27 @@ const MainContent = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  min-height: 400px;
+  min-height: 420px;
+  width: 90%;
 `;
 
 const Headshot = styled(Img)`
   border: 2px solid #c8c8c8;
   border-radius: 100%;
+  margin-bottom: 15px;
   min-height: 220px;
+`;
+
+const MainText = styled.div`
+  padding: 10px 0px;
 `;
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 280px;
-  margin-top: 5px;
+  width: 300px;
+  padding-top: 10px;
 `;
 
 const NavLink = styled(Link)`
@@ -57,20 +63,19 @@ const MainPage = ({ data }) => (
       <MainContent>
         <Headshot fixed={data.headshot.childImageSharp.fixed} />
         <ExternalLinks />
-        <div>
+        <MainText>
           <p>
             I&apos;m John, a full stack web developer from San Francisco, CA.
             <br />
             I build websites using React and Node.
           </p>
-        </div>
+        </MainText>
         <Nav>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/projects">Projects</NavLink>
         </Nav>
       </MainContent>
     </MainWrapper>
-
   </>
 );
 
