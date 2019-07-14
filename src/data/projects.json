@@ -51,6 +51,25 @@
     ]
   },
   {
+    "name": "Towels Included",
+    "description": "An exercise in system design - A back-end for a home share service capable of handling 700 requests per second.",
+    "imgName": "towels_included",
+    "techUsed": [
+      "Node",
+      "Express",
+      "Nginx",
+      "Riak",
+      "loader.io",
+      "New Relic"
+    ],
+    "links": [
+      {
+        "displayName": "Github",
+        "url": "https://github.com/hrsf-111-sdc-towels-included/reviews-module"
+      }
+    ]
+  },
+  {
     "name": "City Clothing Supply - Item Viewer",
     "description": "A module built for a team utilizing service-oriented archetecture to create a dynamic, engaging shopping experience.",
     "imgName": "city_clothing_supply",
