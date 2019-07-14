@@ -45,7 +45,7 @@ const ExternalLinkWrapper = ({ fixed, href, email }) => {
   );
 };
 
-ExternalLink.propTypes = {
+ExternalLinkWrapper.propTypes = {
   fixed: propTypes.shape({
     base64: propTypes.string.isRequired,
     height: propTypes.number.isRequired,
