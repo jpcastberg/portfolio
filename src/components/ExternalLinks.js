@@ -1,14 +1,10 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-const pop = keyframes`
-  0%: { transform: scale(1) }
-  50% { transform: scale(1.1) }
-  100%: { transform: scale(1) }
-`;
+import pop from './popAnimation';
 
 const ExternalLinksArea = styled.ul`
   list-style: none;
@@ -22,7 +18,7 @@ const ExternalLinksArea = styled.ul`
 
 const ExternalLink = styled.li`
   &:hover {
-    animation: ${pop} .3s linear;
+    animation: ${pop(1.1)} .3s linear;
   }
 `;
 

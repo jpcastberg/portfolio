@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+import pop from '../components/popAnimation';
 import ExternalLinks from '../components/ExternalLinks';
 
 const MainWrapper = styled.div`
@@ -54,6 +55,9 @@ const NavLink = styled(Link)`
   border-radius: 10px;
   padding: 8px;
   width: 100px;
+  &:hover {
+    animation: ${pop(1.05)} .3s linear;
+  }
 `;
 
 const MainPage = ({ data }) => (
