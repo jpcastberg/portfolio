@@ -10,7 +10,12 @@ const FooterArea = styled.div`
   height: 59px;
   border-top: thin solid #eeeeee;
   background-color: #000000;
-  margin-top: 20px;
+  @media screen and (min-width: 601px) {
+    padding: 10px 100px;
+  }
+  @media screen and (max-width: 601px) {
+    padding: 10px;
+  }
 `;
 
 const FooterContainer = styled.footer`
@@ -19,7 +24,6 @@ const FooterContainer = styled.footer`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding:10px;
 `;
 
 const Copyright = styled.div`
@@ -27,9 +31,8 @@ const Copyright = styled.div`
     font-size: .9rem;
   }
   @media screen and (max-width: 601px) {
-    font-size: .8rem;
-    min-width: 200px;
-    padding-right: 8px;
+    font-size: .7rem;
+    min-width: 170px;
   }
   text-align: center;
 `;
