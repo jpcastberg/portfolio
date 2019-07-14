@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
 import ContentWrapper from '../components/ContentWrapper';
@@ -9,19 +10,22 @@ import Project from '../components/Project';
 import projectsData from '../data/projects.json';
 
 const Projects = ({ data }) => (
-  <ContentWrapper>
-    <Heading>Projects</Heading>
-    {projectsData.map(project => (
-      <Project
-        key={project.name}
-        name={project.name}
-        fixed={data[project.imgName].childImageSharp.fixed}
-        description={project.description}
-        techUsed={project.techUsed}
-        links={project.links}
-      />
-    ))}
-  </ContentWrapper>
+  <>
+    <Helmet title="Projects" />
+    <ContentWrapper>
+      <Heading>Projects</Heading>
+      {projectsData.map(project => (
+        <Project
+          key={project.name}
+          name={project.name}
+          fixed={data[project.imgName].childImageSharp.fixed}
+          description={project.description}
+          techUsed={project.techUsed}
+          links={project.links}
+        />
+      ))}
+    </ContentWrapper>
+  </>
 );
 
 Projects.propTypes = {

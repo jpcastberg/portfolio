@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -50,23 +51,27 @@ const NavLink = styled(Link)`
 `;
 
 const MainPage = ({ data }) => (
-  <MainWrapper>
-    <MainContent>
-      <Headshot fixed={data.headshot.childImageSharp.fixed} />
-      <ExternalLinks />
-      <div>
-        <p>
-          I&apos;m John, a full stack web developer from San Francisco, CA.
-          <br />
-          I build websites using React and Node.
-        </p>
-      </div>
-      <Nav>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-      </Nav>
-    </MainContent>
-  </MainWrapper>
+  <>
+    <Helmet title="John Castberg" />
+    <MainWrapper>
+      <MainContent>
+        <Headshot fixed={data.headshot.childImageSharp.fixed} />
+        <ExternalLinks />
+        <div>
+          <p>
+            I&apos;m John, a full stack web developer from San Francisco, CA.
+            <br />
+            I build websites using React and Node.
+          </p>
+        </div>
+        <Nav>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+        </Nav>
+      </MainContent>
+    </MainWrapper>
+
+  </>
 );
 
 export const query = graphql`

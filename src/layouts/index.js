@@ -6,14 +6,27 @@ import Transition from '../components/Transition';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
+const siteDescription = 'A page to showcase John Castberg and his wondrous talents in software engineering.';
+
 const Layout = ({ children, location: { pathname } }) => (
   <div>
     <Helmet
-      title="John Castberg"
       meta={[
         {
           name: 'description',
-          content: 'A page to showcase John Castberg and his wondrous talents in software engineering',
+          content: siteDescription,
+        },
+        {
+          name: 'og:title',
+          content: 'John Castberg',
+        },
+        {
+          name: 'og:description',
+          content: siteDescription,
+        },
+        {
+          name: 'og:url',
+          content: 'https://jpcastberg.github.io',
         },
         {
           name: 'keywords',
