@@ -31,24 +31,32 @@ const ProjectArea = styled.div`
 `;
 
 const ProjectName = styled.h3`
-  grid-area: title;
-  align-self: start;
+  @media screen and (min-width: 601px) {
+    grid-area: title;
+    align-self: start;
+  }
 `;
 
 const ProjectImg = styled(Img)`
-  grid-area: img;
-  align-self: center;
+  @media screen and (min-width: 601px) {
+    grid-area: img;
+    align-self: center;
+  }
 `;
 
 const Description = styled.div`
-  grid-area: info;
-  align-self: center;
+  @media screen and (min-width: 601px) {
+    grid-area: info;
+    align-self: center;
+  }
   width: 95%;
 `;
 
 const TechUsed = styled.div`
-  grid-area: tech;
-  align-self: end;
+  @media screen and (min-width: 601px) {
+    grid-area: tech;
+    align-self: end;
+  }
   width: 95%;
   &::before {
     content: "Tech Used: "
@@ -56,8 +64,10 @@ const TechUsed = styled.div`
 `;
 
 const ProjectLinks = styled.div`
-  grid-area: links;
-  align-self: end;
+  @media screen and (min-width: 601px) {
+    grid-area: links;
+    align-self: end;
+  }
   text-align: center;
 `;
 
