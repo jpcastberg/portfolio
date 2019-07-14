@@ -1,8 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import propTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
+const pop = keyframes`
+  0%: { transform: scale(1) }
+  50% { transform: scale(1.1) }
+  100%: { transform: scale(1) }
+`;
 
 const ExternalLinksArea = styled.ul`
   list-style: none;
@@ -14,22 +20,28 @@ const ExternalLinksArea = styled.ul`
   transform: ${props => (props.footer ? 'scale(.75)' : null)}
 `;
 
-const ExternalLink = ({ fixed, href, email }) => {
+const ExternalLink = styled.li`
+  &:hover {
+    animation: ${pop} .3s linear;
+  }
+`;
+
+const ExternalLinkWrapper = ({ fixed, href, email }) => {
   if (email) {
     return (
-      <li>
+      <ExternalLink>
         <a href={href}>
           <Img fixed={fixed} />
         </a>
-      </li>
+      </ExternalLink>
     );
   }
   return (
-    <li>
+    <ExternalLink>
       <a href={href} target="_blank" rel="noopener noreferrer">
         <Img fixed={fixed} />
       </a>
-    </li>
+    </ExternalLink>
   );
 };
 
@@ -81,20 +93,20 @@ const ExternalLinks = ({ footer }) => (
     `}
     render={data => (
       <ExternalLinksArea footer={footer}>
-        <ExternalLink
+        <ExternalLinkWrapper
           fixed={data.email.childImageSharp.fixed}
           href="mailto:jpcastberg@gmail.com"
           email
         />
-        <ExternalLink
+        <ExternalLinkWrapper
           fixed={data.github.childImageSharp.fixed}
           href="https://github.com/jpcastberg"
         />
-        <ExternalLink
+        <ExternalLinkWrapper
           fixed={data.linkedin.childImageSharp.fixed}
           href="https://linkedin.com/in/jpcastberg"
         />
-        <ExternalLink
+        <ExternalLinkWrapper
           fixed={data.resume.childImageSharp.fixed}
           href="https://docs.google.com/document/d/1tLLfDaQDAu5_iWLsrZyVs939kTlc5T0z_zbV4c4jVQw/preview"
         />
