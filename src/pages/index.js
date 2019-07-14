@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import ExternalLink from '../components/ExternalLink';
+import ExternalLinks from '../components/ExternalLinks';
 
 const MainWrapper = styled.div`
   display: flex;
@@ -49,38 +49,11 @@ const NavLink = styled(Link)`
   width: 100px;
 `;
 
-const ExternalLinks = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 40px;
-  width: 220px;
-`;
-
 const MainPage = ({ data }) => (
   <MainWrapper>
     <MainContent>
       <Headshot fixed={data.headshot.childImageSharp.fixed} />
-      <ExternalLinks>
-        <ExternalLink
-          fixed={data.email.childImageSharp.fixed}
-          href="mailto:jpcastberg@gmail.com"
-          email
-        />
-        <ExternalLink
-          fixed={data.github.childImageSharp.fixed}
-          href="https://github.com/jpcastberg"
-        />
-        <ExternalLink
-          fixed={data.linkedin.childImageSharp.fixed}
-          href="https://linkedin.com/in/jpcastberg"
-        />
-        <ExternalLink
-          fixed={data.resume.childImageSharp.fixed}
-          href="https://docs.google.com/document/d/1tLLfDaQDAu5_iWLsrZyVs939kTlc5T0z_zbV4c4jVQw/preview"
-        />
-      </ExternalLinks>
+      <ExternalLinks />
       <div>
         <p>
           I&apos;m John, a full stack web developer from San Francisco, CA.
@@ -101,34 +74,6 @@ export const query = graphql`
     headshot: file(relativePath: { eq: "images/headshot_square.png" }) {
       childImageSharp {
         fixed(width: 220, height: 220) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    email: file(relativePath: { eq: "images/email.png" }) {
-      childImageSharp {
-        fixed(width: 40, height: 40) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    github: file(relativePath: { eq: "images/github.png" }) {
-      childImageSharp {
-        fixed(width: 40, height: 40) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    linkedin: file(relativePath: { eq: "images/linkedin.png" }) {
-      childImageSharp {
-        fixed(width: 40, height: 40) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    resume: file(relativePath: { eq: "images/resume.png" }) {
-      childImageSharp {
-        fixed(width: 32, height: 40) {
           ...GatsbyImageSharpFixed
         }
       }

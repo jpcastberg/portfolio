@@ -1,27 +1,17 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-const fadeIn = keyframes`
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-`;
+import Fade from './Fade';
 
-const fadeOut = keyframes`
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-`;
 
 const NavArea = styled.div`
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: 49px;
   background-color: #000000;
   border-bottom: thin solid #ffffff;
-  display: ${props => (props.out ? 'none' : 'block')};
-  animation: ${props => (props.out ? fadeOut : fadeIn)} 0.3s linear;
-  transition: visibility 0.3s linear;
   z-index: 1;
 `;
 
@@ -59,16 +49,17 @@ class Nav extends React.Component {
   }
 
   render() {
-    const currentPage = this.getCurrentPageName();
-    const out = currentPage === '';
+    const { props: { pathname } } = this;
     return (
-      <NavArea out={out}>
-        <NavContainer>
-          <li>{this.createNavItem('')}</li>
-          <li>{this.createNavItem('about')}</li>
-          <li>{this.createNavItem('projects')}</li>
-        </NavContainer>
-      </NavArea>
+      <Fade pathname={pathname}>
+        <NavArea>
+          <NavContainer>
+            <li>{this.createNavItem('')}</li>
+            <li>{this.createNavItem('about')}</li>
+            <li>{this.createNavItem('projects')}</li>
+          </NavContainer>
+        </NavArea>
+      </Fade>
     );
   }
 }

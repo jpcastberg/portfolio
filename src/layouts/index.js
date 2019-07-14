@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import Transition from '../components/Transition';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const Layout = ({ children, location: { pathname } }) => (
   <div>
@@ -26,6 +27,7 @@ const Layout = ({ children, location: { pathname } }) => (
     />
     <Nav pathname={pathname} />
     <Transition pathname={pathname}>{children}</Transition>
+    <Footer pathname={pathname} />
   </div>
 );
 
