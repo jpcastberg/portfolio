@@ -95,6 +95,26 @@
     {
       "name": "Chai",
       "url": "https://www.chaijs.com/"
+    },
+    {
+      "name": "Wordpress",
+      "url": "https://wordpress.org/"
+    },
+    {
+      "name": "Wix",
+      "url": "https://www.wix.com/"
+    },
+    {
+      "name": "Microsoft Office/O365",
+      "url": "https://www.office.com/"
+    },
+    {
+      "name": "gSuite",
+      "url": "https://gsuite.google.com/"
+    },
+    {
+      "name": "Slack",
+      "url": "https://slack.com/"
     }
   ]
 }
