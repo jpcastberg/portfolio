@@ -43,7 +43,7 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 300px;
+  width: 285px;
   padding-top: 10px;
 `;
 
